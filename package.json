@@ -1,0 +1,18 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "How to fix error `File C:\\Users\\Admin\\AppData\\Roaming\\npm\\tsc.ps1 cannot be loaded because running scripts is disabled on this system` when using Typescript compiler tsc in `powershell`:",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
