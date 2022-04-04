@@ -2,7 +2,6 @@
 
 ## What is TypeScript?
 
-
 **TypeScript** is a **Javascript** superset:
 
 - Built up on **Javascript**
@@ -18,12 +17,10 @@
 - Non-JS features: `Interfaces`, `Generics`
 - Meta-programming features like `Decorators`
 
-
 ## Why TypeScript?
 
 - Help dev write better code (as a type checker)
 - Easier to write (IDE support)
-
 
 ## Environment setup
 
@@ -35,12 +32,11 @@
    - ESLint
    - TSLint
 
-
 ## TypeScript Basics
 
 ### Core types
 
-See `./src/Basics.ts`
+**See** `./src/CoreTypes.ts`
 
 `primitives`: `number`, `string`, `boolean`
 
@@ -60,6 +56,8 @@ See `./src/Basics.ts`
 
 ### Type alias
 
+**See** `./src/Alias.ts`
+
 Used to provide names to type literal
 
 Think of types like variable (Much like how you can create variables with same name in different scopes)
@@ -68,9 +66,7 @@ Support more rich type system features than `interfaces`
 
 ![Type alias](/cheat-sheets/Types.png "Type alias")
 
-
 ## Compiler Configuration
-
 
 ## Reference
 
@@ -81,7 +77,6 @@ Support more rich type system features than `interfaces`
 [Handbook][2]
 
 ## Notes
-
 
 How to fix error `File C:\Users\Admin\AppData\Roaming\npm\tsc.ps1 cannot be loaded because running scripts is disabled on this system` when using TypeScript compiler tsc in `powershell`:
 
