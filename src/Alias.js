@@ -13,8 +13,12 @@ var message = { id: 100, message: "Hello" };
 var myMessage = { id: 1, message: "Not now!!!" };
 // type from function return - Create type from function return type
 var createFish = function () { return { id: 1, name: "Nemo" }; };
-// types from module
-// TODO
-// mapped types
+var cat = { name: "Bobby", canFly: false };
+var someone = {
+    name: function (newValue) { return (console.log(newValue)); },
+    bio: function (newValue) { return (console.log(newValue)); }
+};
+someone.name("Pianta");
+someone.bio("Teemo");
 // conditional types
 // template union types

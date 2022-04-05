@@ -1,6 +1,6 @@
 export {}
 
-// <Type alias> - used to create new type (think of types like variable)
+// <Type alias> - Create types from types (think of types like variable)
 
 // Create type from primitive types
 type MissingNo = 404;
@@ -43,11 +43,33 @@ let myMessage: Message = {id: 1, message: "Not now!!!"};
 const createFish = () => {return {id: 1, name: "Nemo"}};
 type Fish = ReturnType<typeof createFish>; // type Fish = {id: number, name: string};
 
-// types from module
-// TODO
+// types from module - Import type from a module
+import { Animal } from "./Animal";
+let cat: Animal = {name: "Bobby", canFly: false};
 
-// mapped types
+// mapped types - Create types base on another type
+type Artist = {name: string, bio: string};
+type Subscriper<Type> = {
+    [Property in keyof Type]:
+        (newValue: Type[Property]) => void
+};
+type ArtistSub = Subscriper<Artist>;
+var someone: ArtistSub = {
+    name: (newValue: string) => (console.log(newValue)),
+    bio: (newValue: string) => (console.log(newValue)),
+};
+someone.name("Pianta");
+someone.bio("Teemo");
 
-// conditional types
+// conditional types - Create types with condition
+interface Card {id: number};
+interface CreditCard extends Card {date: Date};
+type ConditionalType = Card extends CreditCard ? string : number;
+let num: ConditionalType = 100;
+// let str: ConditionalType = "asdasd"; // Erro
 
-// template union types
+// template union types - Create types by expand string literal types into mayny string via unions
+type LanguageCode = "en" | "zh" | "vi";
+type CountryCode = "us" | "cn" | "vn";
+type CountryLanguageCode = `${CountryCode}_${LanguageCode}`;
+type LocalizeFiles = `${LanguageCode}_text.json`;
