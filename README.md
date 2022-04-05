@@ -32,40 +32,6 @@
    - ESLint
    - TSLint
 
-## TypeScript Basics
-
-### Core types
-
-**See** `./src/CoreTypes.ts`
-
-`primitives`: `number`, `string`, `boolean`
-
-`object`: Javascript objects with specific type for each key
-
-`Array`: Javascript arrays with type
-
-`Tuple`: Fixed-length array with types
-
-`Enum`: Automatically enumarated global constant identifiers
-
-`any`: Ok, dont check type of this variable
-
-`Union types`: Mix multiple types (Type is a set, union of 2 sets/types is a new type)
-
-`Literial types`: Union type of specific values
-
-### Type alias
-
-**See** `./src/Alias.ts`
-
-Used to provide names to type literal
-
-Think of types like variable (Much like how you can create variables with same name in different scopes)
-
-Support more rich type system features than `interfaces`
-
-![Type alias](/cheat-sheets/Types.png "Type alias")
-
 ## Compiler Configuration
 
 ## Reference
