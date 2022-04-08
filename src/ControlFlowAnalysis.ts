@@ -3,7 +3,7 @@ export {}
 // <If Statements> 
 
 //// typeof - for primitives
-let input: string | number;
+let input: string | number = Math.random() < 0.5 ? "str" : 10;
 if (typeof input === "string") {
     let length = input.length; // input is string
     console.log("Input is string");
@@ -13,7 +13,7 @@ if (typeof input === "string") {
 }
 
 //// instanceof - for classes
-let param: number | number[];
+let param: number | number[] = Math.random() < 0.5 ? 100 : [10, 20];
 if (param instanceof Array) {
     param.push(10);
     console.log("param is array");
@@ -28,7 +28,7 @@ if ("error" in something) {
 }
 
 //// type-guard functions - for anything
-let output: number | number[];
+let output: number | number[] = Math.random() < 0.5 ? 100 : [10, 20];;
 if (Array.isArray(output)) {
     console.log("output is an array", output.length);
 } else {
@@ -36,15 +36,15 @@ if (Array.isArray(output)) {
 }
 
 //// Expression
-let value: string | number;
+let value: string | number = Math.random() < 0.5 ? "str" : 10;;
 let valueLength = typeof(value) === "string" && value.length || value;
 
 //// Discriminated Unions
 type Responses = { status: 200, data: any } | { status: 301, to: string } | { status: 400, error: number };
-function getResponse(type): Responses {
+function getResponse(type: number): Responses {
     if (type === 1) return { status: 200, data: 100 };
     if (type === 2) return { status: 301, to: "me" };
-    return { status: 400, error: -1 }
+    return { status: 400, error: -1 };
 }
 const response = getResponse(Math.random() * 10);
 switch(response.status) {
@@ -61,14 +61,14 @@ switch(response.status) {
 
 //// Assertion Functions
 class Resp {};
-class SuccessResponse extends Resp {data: string};
-class ErrorResponse extends Resp {errorCode: number};
+class SuccessResponse extends Resp {data: string = ""};
+class ErrorResponse extends Resp {errorCode: number = 0};
 function assertResponse(obj: any): asserts obj is SuccessResponse {
     if (!(obj instanceof SuccessResponse)) {
         throw new Error("Not a success!");
     }
 }
-let resp: Resp;
+let resp: Resp = new Resp();
 assertResponse(resp); // If resp is not SuccessResposne -> throw a error here
 resp.data; // Response is SuccessResponse
 
@@ -79,7 +79,7 @@ const data1 = {name: "Phuc Anh"}; // Type of name is string
 const data2 = {name: "Batman"} as const; // Type of name is "Batman"
 
 ////// Tracks through related variables 
-function createResp(num): SuccessResponse | ErrorResponse {
+function createResp(num : number): SuccessResponse | ErrorResponse {
     return num > 0.5 ? {data: "AAAAAAAA"} : {errorCode: 404};
 }
 let respA: Resp = createResp(1);
@@ -90,6 +90,6 @@ if (isSuccessResponse) {
 
 ////// Re-assignment updates types
 let data: string | number;
-data; // string | number
+data = Math.random() < 0.5 ? "str" : 10;; // string | number
 data = "Hello"; // string
 data; // string

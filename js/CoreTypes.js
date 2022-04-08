@@ -1,31 +1,30 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 // <primitives: number, string, boolean>
-var name = "Batman";
-var age = 29;
-var isAdmin = true;
+let name = "Batman";
+let age = 29;
+let isAdmin = true;
 // <object>
-var me = {
+let me = {
     name: "Phuc Anh",
     age: 25,
     isAdmin: true
 };
 console.log("My name is:", me.name);
 // <Array>
-var janna = {
+let janna = {
     name: "Janna",
     age: 29,
     isAdmin: true,
     hobbies: ["Gym, Game, Music"]
 };
-for (var _i = 0, _a = janna.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
+for (const hobby of janna.hobbies) {
     console.log("Janny likes " + hobby);
 }
 // <Tuple>
-var atlas = [1, "icons.png", "icon.plist"];
+let atlas = [1, "icons.png", "icon.plist"];
 console.log("Atlas: ", atlas[0], atlas[1], atlas[2]);
-var position = [100, 200];
+let position = [100, 200];
 console.log("Position: ", position[0], position[1]);
 // <Enum>
 var TextureType;
@@ -44,7 +43,7 @@ var ItemType;
 })(ItemType || (ItemType = {}));
 ;
 // <Any>
-var value;
+let value;
 value = 10;
 value = "A String";
 value = true;
@@ -55,5 +54,5 @@ id = "id_100";
 // id = false; // error
 // <Literial types>
 // role can only be "ADMIN" or "USER" => this is union type of 2 value "ADNIM" and "USER"
-var role = "ADMIN";
+let role = "ADMIN";
 // role = "UNKNOWN"; // Error
