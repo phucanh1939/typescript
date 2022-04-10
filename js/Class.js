@@ -95,3 +95,89 @@ player.addItem(1, 100);
 player.addItem(new Item(2));
 player.addItem(new Item(100));
 player.log();
+// <Parameter properties> 
+class Vec2 {
+    /**
+     *
+     */
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    ;
+    log() {
+        console.log("%d, %d", this.x, this.y);
+    }
+}
+;
+let position = new Vec2(10, 100);
+position.log();
+// <Generic Class> <Abstract Class> 
+class Animal {
+    /**
+     *
+     */
+    constructor() {
+        this.name = "";
+        this.type = "";
+        this.position = new Vec2(0, 0);
+    }
+    ;
+}
+;
+class Dog extends Animal {
+    /**
+     *
+     */
+    constructor() {
+        super();
+        this.name = "DOG";
+        this.type = "GROUND";
+    }
+    ;
+    move() {
+        this.run();
+    }
+    run() {
+        console.log("run");
+    }
+    ;
+}
+;
+class Fish extends Animal {
+    /**
+     *
+     */
+    constructor() {
+        super();
+        this.name = "DOG";
+        this.type = "GROUND";
+    }
+    ;
+    move() {
+        this.swim();
+    }
+    ;
+    swim() {
+        console.log("swim");
+    }
+    ;
+}
+;
+class House {
+    /**
+     *
+     */
+    constructor() {
+        this.members = [];
+    }
+    ;
+    addMember(member) {
+        this.members.push(member);
+    }
+}
+;
+var dogHouse = new House();
+dogHouse.addMember(new Dog());
+var playerHouse = new House();
+playerHouse.addMember(new Player(100));
